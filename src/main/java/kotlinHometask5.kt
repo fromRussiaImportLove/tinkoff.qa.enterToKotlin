@@ -2,21 +2,27 @@ package tinkoff.qa.hometask.enterToKotlin
 
 fun main() {
     print("Введите натруальное число не более 1000: ")
-    val num: String = readLine()!!
-    num.toIntOrNull()?.let {
-        when (it) {
+    print(numberInWord(readLine()))
+
+}
+
+internal fun numberInWord(num: String?): String {
+    num?.toIntOrNull()?.let {
+        return when (it) {
             in 1..999 -> {
                 val stringNum = it.toString()
                 when (stringNum.length) {
-                    3 -> print(hundredsToText(stringNum))
-                    2 -> print(tensToText(stringNum))
-                    1 -> print(entitiesToText(stringNum[0]))
+                    3 -> hundredsToText(stringNum)
+                    2 -> tensToText(stringNum)
+                    1 -> entitiesToText(stringNum[0])
+                    else -> "Как так? Тут нельзя оказаться"
                 }
             }
-            1000 -> print("Тысяча")
-            else -> print("Число за пределами диапазона")
+            1000 -> return "Тысяча"
+            else -> return "Число за пределами диапазона"
         }
     }
+    return "Цифры! Дай мне цифры!"
 }
 
 private fun entitiesToText(n: Char): String {

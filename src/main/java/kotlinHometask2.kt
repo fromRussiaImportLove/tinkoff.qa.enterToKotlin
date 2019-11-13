@@ -2,7 +2,10 @@ package tinkoff.qa.hometask.enterToKotlin
 
 fun main() {
     print("Введите число: ")
-    val stringInput: String = readLine().toString()
-    println(stringInput.reversed())
+    println(reverseFunc(readLine().toString()))
+}
+
+internal fun reverseFunc(stringInput: String): String {
+    return stringInput.reversed()
 }
 

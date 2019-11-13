@@ -12,15 +12,13 @@ class KotlinHometask1KtTest {
     @Test
     internal fun testEnterAndRecieveData() {
         val num = "42"
-        assertEquals("Вы ввели число: 42", inputNumber(num))
-        print(num)
+        assertEquals("Вы ввели число: 42", inputNumber(num), "Wrong result")
     }
 
     @Test
     internal fun testEnterAndRecieveErrorMessage() {
         val num = ""
-        assertEquals("Ошибка ввода", inputNumber(num))
-        print(num)
+        assertEquals("Ошибка ввода", inputNumber(num), "Wrong result")
     }
 
 }

@@ -22,6 +22,10 @@ fun main(){
         print("Нужно число в диапазоне от 1 до 65535")
     }
 
+    println(sortArrayFunc(intArray))
+}
+
+internal fun sortArrayFunc(intArray: ArrayList<Int>): ArrayList<Int> {
     val sortdArray = mutableListOf<Int>()
 
     for (i in intArray) {
@@ -32,7 +36,9 @@ fun main(){
         }
     }
 
-    println(sortdArray)
+    val srtdArray = ArrayList<Int>(sortdArray)
+
+    return srtdArray
 }
 
 private fun forMyMemory() {
